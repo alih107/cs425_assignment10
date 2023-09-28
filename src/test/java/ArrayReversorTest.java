@@ -29,4 +29,10 @@ public class ArrayReversorTest {
         int[] expected = {8, 7, 6, 5, 4, 3, 2, 1};
         assertArrayEquals(expected, arrayReversor.reverseArray(input));
     }
+
+    @Test
+    public void testNullArray_withMock() {
+        when(arrayFlattenerServiceMock.flatten2D(null)).thenReturn(null);
+        assertArrayEquals(null, arrayReversor.reverseArray(null));
+    }
 }
